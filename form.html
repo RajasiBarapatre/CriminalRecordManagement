@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/pen.css' rel='stylesheet'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <section>
+            <div class="container-form">
+                <h2 class="text-center"><strong>FILE A COMPLAINT</strong></h2>
+                <form class="form-horizontal" id="myform">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="victim-name">Name of Victim:</label>
+                        <div class="col-sm-10"> 
+                            <input type="text" class="form-control" id="victim-name" placeholder="Enter name" name="victim-name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">       
+                        <label class="control-label col-sm-2" for="witness-name">Name of Witness:</label>
+                        <div class="col-sm-10">     
+                            <input type="text" class="form-control" id="witness-name" placeholder="Enter Name of Witness" name="witness-name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-16">
+                            <label class="control-label col-sm-2" for="victim-phone">Phone Number of Victim:</label>
+                        </div>  
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="victim-phone" placeholder="Enter phone number" name="victim-phone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="witness-phone">Phone Number of Witness:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="witness-phone" placeholder="Enter phone number" name="witness-phone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="victim-address">Address of Victim:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="victim-address" placeholder="Enter Address" name="victim-address">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="victim-age">Age of Victim:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="victim-age" placeholder="Enter Age" name="victim-age">
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-row">
+                        <label class="control-label col-md-6" for="crime-location">Location of the Crime:</label>
+                        <label class="control-label col-md-6" for="date">Date-Month-Year:</label>
+                    </div> -->
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="crime-category">Crime Category:</label>
+                        <div class="col-sm-10">
+                            <!-- <input type="text" class="form-control" id="crime-category" placeholder="Enter Category" name="crime-category"> -->
+                            <select class="form-control col-6" id="crime-category" placeholder="Enter Category" name="crime-category">
+                                <option>Theft</option>
+                                <option>Assault</option>
+                                <option>Murder</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row" style="width:100%;">
+                            <!-- <label class="control-label col-sm-2" for="crime-location">Location of the Crime:</label> -->
+                            <div class="col-sm-4">
+                                <label class="control-label col-md-6" for="crime-location">Location of the Crime:</label>
+                                <!-- <input type="text" class="form-control col-6" id="crime-location" placeholder="Enter Location" name="crime-location"> -->
+                                <select class="form-control col-6" id="crime-location" placeholder="Enter Location" name="crime-location">
+                                    <option>Pune</option>
+                                    <option>Mumbai</option>
+                                    <option>Satara</option>
+                                </select> 
+                 
+                            </div>
+                            <div class="col-sm-1">
+
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="control-label col-md-6" for="date">Date-Month-Year:</label>
+                                <input type="date" class="form-control col-2" id="date" placeholder="Enter Date-Month-Year" name="date">
+                            </div>
+                        </div>
+                    </div>
+                         
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10 text-center">
+                            <div class="col-sm-5">
+                                <button type="submit" id="submitt" class="btn btn-primary co-md-8">Submit</button>
+                            </div>
+                            
+                        </div>
+                        <div id="success-message" style="display: none;"></div>
+                    </div>
+
+                    
+                </form>
+                <!-- <pre id="bst-data-display"></pre> -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- <div class="container">
+        <table id="complaint-table" class="table">
+          <thead>
+            <tr>
+              <th>Name of Victim</th>
+              <th>Name of Witness</th>
+              <th>Phone Number of Victim</th>
+              <th>Phone Number of Witness</th>
+              <th>Address of Victim</th>
+              <th>Age of Victim</th>
+              <th>Location of the Crime</th>
+              <th>Date-Month-Year</th>
+              <th>Crime Category</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div> -->
+    
+    <!-- <section>
+        <div class="help">
+            <div class="container-fluid text center">
+
+            </div>
+        </div>
+    </section> -->
+
+    <script>
+        var header= document.getElementsByTagName("header");
+        window.onscroll= function() {scrollFunction()};
+        function scrollFunction()
+        {
+            if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200)
+            {
+                header[0].setAttribute("class","header-active");
+            }
+            else
+            {
+                header[0].removeAttribute("class");
+            }
+        }
+
+        document.getElementById("submitt").addEventListener("click", function() 
+        {
+            const form = document.getElementById("myform");
+            const formElements = form.querySelectorAll("input, select, textarea");
+            const flag=true;
+            for (const formElement of formElements) 
+            {
+                if (formElement.value === "") 
+                {
+                    flag=false;
+                    alert(`Please enter a value for ${formElement.name}`);
+                    break;
+                    
+                }
+            }
+            const phoneInput1 = document.getElementById("witness-phone");
+            const phoneInput2 = document.getElementById("victim-phone");
+            const phoneValue1 = phoneInput1.value;
+            const phoneValue2 = phoneInput2.value;
+            const phoneRegex = /^\d{10}$/;
+            if (!phoneRegex.test(phoneValue1) || !phoneRegex.test(phoneValue2)) 
+            {
+                alert("Please enter a valid phone number.");
+                flag=false;
+            }
+            if(flag===true)
+            {
+                submitForm(event);           
+            }
+            
+            
+        });
+        
+    </script> 
+
+<!-- Add Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/pen.css' rel='stylesheet'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body onload="fillForm()">   
+    <!-- loads the data automatically  -->
+
+    <section>
+            <div class="container-edit">
+                <h2 class="text-center"><strong>EDIT PAGE</strong></h2>
+                <form class="form-horizontal"  id="edit-form" >
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="id">ID:</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="id" placeholder="" name="id" >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="victim-name">Name of Victim:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="victim-name" placeholder="Enter name" name="victim-name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="convict-name">Name of Convict:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="convict-name" placeholder="Enter name" name="convict-name" >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="convict-gender">Gender of Convict:</label>
+                        <div class="col-sm-10">
+                            <select class="form-control col-6" id="convict-gender" placeholder="Enter Gender" name="convict-gender">
+                                <option>Female</option>
+                                <option>Male</option>
+                                <option>Other</option>
+                            </select> 
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="convict-age">Age of Convict:</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="convict-age" placeholder="Enter Age" name="convict-age" >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="witness-name">Name of Witness:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="witness-name" placeholder="Enter Name of Witness" name="witness-name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="victim-phone">Phone Number of Victim:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="victim-phone" placeholder="Enter phone number" name="victim-phone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="witness-phone">Phone Number of Witness:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="witness-phone" placeholder="Enter phone number" name="witness-phone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="victim-address">Address of Victim:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="victim-address" placeholder="Enter Address" name="victim-address">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="victim-age">Age of Victim:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="victim-age" placeholder="Enter Age" name="victim-age">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="crime-location">Location of the Crime:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="crime-location" placeholder="Enter Location" name="crime-location">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="date">Date-Month-Year:</label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" id="date" placeholder="Enter Date-Month-Year" name="date">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="year">Crime Year:</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="year" placeholder="Enter Year" name="year">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="crime-category">Crime Category:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="crime-category" placeholder="Enter Category" name="crime-category">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="jail-term">Jail Term:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="jail-term" placeholder="Enter Jail Term" name="jail-term">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10 text-center">
+                            <button type="submit-edit" class="btn btn-primary" onclick="submitEditForm(event)">Okay</button>
+                        </div>
+                    </div>
+                    
+                </form>
+                <!-- <pre id="bst-data-display"></pre> -->
+
+            </div>
+        </div>
+       
+    </section>
+
+    
+    
+    <section>
+        <div class="help">
+            <div class="container-fluid text center">
+
+            </div>
+        </div>
+    </section>
+
+  
+
+<!-- Add Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+<script src="temp.js"></script>
+<script src="script.js"></script>
+<script>
+
+    document.getElementById("submit-edit").addEventListener("click", function() 
+        {
+            const form = document.getElementById("edit-form");
+            const formElements = form.querySelectorAll("input, select, textarea");
+            const flag=true;
+            for (const formElement of formElements) 
+            {
+                if (formElement.value === "") 
+                {
+                    flag=false;
+                    alert(`Please enter a value for ${formElement.name}`);
+                    break;
+                    
+                }
+            }
+            if(flag===true)
+            {
+                submitEditForm(event);           
+            }
+            
+            
+        });
+  </script>
+
+
+
+</body>
+</html>
+

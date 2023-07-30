@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/pen.css' rel='stylesheet'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="container-ops">
+    <section>
+        <div class="container">
+            <div class="text-center">
+                <h1>Operation Page!!</h1>
+                <a href="#" class="btn btn-primary" id="check-complaint-btn">Check Filed Complaint</a>
+                <table class="table" id="complaint-tab" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Victim Name</th>
+                            <th>Witness Name</th>
+                            <th>Victim Phone</th>
+                            <th>Witness Phone</th>
+                            <th>Victim Address</th>
+                            <th>Victim Age</th>
+                            <th>Crime Location</th>
+                            <th>Date</th>
+                            <th>Crime Category</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </section>
+
+
+    <section>
+        <div class="container">
+            <div class="text-center">
+                <a href="#" class="btn btn-primary" id="check-complaint-btn1" >Check Filed Solved</a>
+                <table class="table" id="complaint-tab1" style="display: none;"> 
+                  <!-- if style not written then table displayed without clicking button -->
+                    <thead>
+                      <tr>
+                        <th>Id</th>
+                        <th>Victim Name</th>
+                        <th>Convict Name</th>
+                        <th>Convict Gender</th>
+                        <th>Convict Age</th>
+                        <th>Witness Name</th>
+                        <th>Victim Phone</th>
+                        <th>Witness Phone</th>
+                        <th>Victim Address</th>
+                        <th>Victim Age</th>
+                        <th>Crime Year</th>
+                        <th>Crime Location</th>
+                        <th>Date</th>
+                        <th>Crime Category</th>
+                        <th>Jail Term</th>
+                      </tr>
+                    </thead>
+                    <tbody id="complaint-tab1-body"></tbody> 
+                  </table>
+                  
+            </div>
+        </div>
+
+     
+    </section>
+
+    <section>
+      <div class="container-ID">
+        <div class="text-center">
+          <h2>Search by ID</h2>
+          <div class="form-group">
+            <input type="number" class="form-control" id="search-id" placeholder="Enter ID">
+            <button type="button" class="btn btn-primary" id="search-btn">Search</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container-Location">
+        <div class="text-center">
+          <h2>Search by Location</h2>
+          <div class="form-group">
+            <select class="form-control col-6" id="search-loc" placeholder="Select Location">
+              <option>Pune</option>
+              <option>Mumbai</option>
+              <option>Satara</option>
+            </select> 
+            <button type="button" class="btn btn-primary" id="search-location">Search</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section>
+      <div class="container-victim">
+        <div class="text-center">
+          <h2>Search by Victim Name</h2>
+          <div class="form-group">
+            <input type="text" class="form-control" id="search-vic" placeholder="Enter Victim Name">
+            <button type="button" class="btn btn-primary" id="search-victim">Search</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container-Location">
+        <div class="text-center">
+          <h2>Search by Category</h2>
+          <div class="form-group">
+            <select class="form-control col-6" id="search-cat" placeholder="Select Category">
+              <option>Assault</option>
+              <option>Theft</option>
+              <option>Murder</option>
+            </select> 
+            <button type="button" class="btn btn-primary" id="search-category">Search</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container-adv">
+        <div class="text-center">
+          <h2>Advanced Search</h2>
+          <div class="form-group">
+            <select class="form-control col-6" id="adv-loc" placeholder="Select Location">
+              <option>Pune</option>
+              <option>Mumbai</option>
+              <option>Satara</option>
+            </select> 
+            <select class="form-control col-6" id="adv-cat" placeholder="Select Category">
+              <option>Theft</option>
+              <option>Assault</option>
+              <option>Murder</option>
+          </select>
+            <button type="button" class="btn btn-primary" id="adv search">Search</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+
+    <!-- Add Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="temp.js"></script>
+    
+   
+
+    <script>
+        // JavaScript code to show the table when the button is clicked
+        document.getElementById("check-complaint-btn").addEventListener("click", function() 
+        {
+          // Load the stored complaint data if not already loaded
+          if (bst.root === null) 
+          {
+            loadComplaintData();
+          }
+          // Display the complaint data
+          displayData();
+           // Show the table
+          document.getElementById("complaint-tab").style.display = "table";
+        });
+</script>
+
+<script>
+
+document.getElementById("check-complaint-btn1").addEventListener("click", function() {
+  // Load the stored complaint data if not already loaded
+  if (bst1.root === null) {
+    loadComplaintData1();
+  }
+
+  // Display the complaint data
+  displayData1();
+
+  // Show the table
+  document.getElementById("complaint-tab1").style.display = "table";
+});
+
+</script>
+<script>
+  // Search by ID 
+  document.getElementById("search-btn").addEventListener("click", function() {
+      const searchId = document.getElementById("search-id").value;
+      const searchData = searchById(bst1.root, searchId);
+      displaySearchResult(searchData);
+      console.log(searchData);
+      document.getElementById("search-id").value="";
+    });
+
+    
+    function searchById(node, searchId) {
+      if (node === null || node.data.id === searchId) {
+        return node ? node.data : null;
+      }
+
+      if (searchId < node.data.id) {
+        return searchById(node.left, searchId);
+      } else {
+        return searchById(node.right, searchId);
+      }
+    }
+
+
+    document.getElementById("search-location").addEventListener("click", function() {
+      const entries=[];
+      const searchloc = document.getElementById("search-loc").value;
+      searchByloc(bst1.root, searchloc, entries);
+      for (const key of entries) 
+      {
+        displaySearchResultMulti(entries);
+      }
+      console.log(entries);
+      document.getElementById("search-loc").value="";
+    });
+
+
+    function searchByloc(node, searchloc, entry) 
+    {
+      if (node === null) 
+      {
+        return ;
+      }
+      if (node.data.crimeLocation === searchloc) 
+      {
+        entry.push(node.data);
+      }
+      if (searchloc < node.data.crimeLocation) 
+      {
+        searchByloc(node.left, searchloc, entry);
+      } 
+      else if (searchloc > node.data.crimeLocation) 
+      {
+        searchByloc(node.right, searchloc, entry);
+      } else 
+      {
+        searchByloc(node.left, searchloc, entry);
+        searchByloc(node.right, searchloc, entry);
+      }
+    }
+
+
+    document.getElementById("search-category").addEventListener("click", function() {
+      const entries=[];
+      const searchcat = document.getElementById("search-cat").value;
+      searchBycat(bst1.root, searchcat, entries);
+      for (const key of entries) 
+      {
+        displaySearchResultMulti(entries);
+      }
+      console.log(entries);
+      document.getElementById("search-cat").value="";
+    });
+
+
+    function searchBycat(node, searchcat, entry) 
+    {
+      if (node === null) 
+      {
+        return ;
+      }
+      if (node.data.crimeCategory === searchcat) 
+      {
+        entry.push(node.data);
+      }
+      if (searchcat < node.data.crimeCategory) 
+      {
+        searchBycat(node.left, searchcat, entry);
+      } 
+      else if (searchcat > node.data.crimeCategory) 
+      {
+        searchBycat(node.right, searchcat, entry);
+      } else 
+      {
+        searchBycat(node.left, searchcat, entry);
+        searchBycat(node.right, searchcat, entry);
+      }
+    }
+
+
+    document.getElementById("search-victim").addEventListener("click", function() {
+      const searchVictim = document.getElementById("search-vic").value;
+      const searchData = searchByVic(bst1.root, searchVictim);
+      displaySearchResult(searchData);
+      console.log(searchData);
+
+      document.getElementById("search-vic").value="";
+    });
+
+    
+    function searchByVic(node, searchVictim) {
+      if (node === null || node.data.victimName.toLowerCase() === searchVictim.toLowerCase()) {
+        return node ? node.data : null;
+      }
+
+      if (searchVictim.toLowerCase() < node.data.victimName.toLowerCase()) {
+        return searchByVic(node.left, searchVictim);
+      } else {
+        return searchByVic(node.right, searchVictim);
+      }
+    }
+
+    document.getElementById("adv search").addEventListener("click", function() {
+      const entries=[];
+      const advloc = document.getElementById("search-vic").value;;
+      const advcat = document.getElementById("adv-cat").value;
+      advSearch(bst1.root, advloc, advcat, entries);
+      for (const key of entries) 
+      {
+        displaySearchResultMulti(entries);
+      }
+      console.log(entries);
+      document.getElementById("search-vic").value="";
+      document.getElementById("search-vic").value="";
+    });
+
+    
+    function advSearch(node, advloc, advcat, entry) {
+      if (node === null) 
+      {
+        return ;
+      }
+      if (node.data.crimeCategory === advcat && node.data.crimeLocation === advloc) 
+      {
+        entry.push(node.data);
+      }
+      if (advcat < node.data.crimeCategory) 
+      {
+        advSearch(node.left, advloc, advcat, entry);
+      } 
+      else if (advcat > node.data.crimeCategory) 
+      {
+        advSearch(node.right, advloc, advcat, entry);
+      } 
+      else 
+      {
+        advSearch(node.left,advloc, advcat, entry);
+        advSearch(node.right,advloc, advcat, entry);
+      }
+    }
+
+    function displaySearchResult(data) {
+      const complaintTable = document.getElementById("complaint-tab1");
+      const tbody = complaintTable.querySelector("#complaint-tab1-body");
+      tbody.innerHTML = "";
+     
+      if (data) {
+        const row = document.createElement("tr");
+
+        const idCell = document.createElement("td");
+        idCell.textContent = data.id;
+        row.appendChild(idCell);
+
+        const victimNameCell = document.createElement("td");
+        victimNameCell.textContent = data.victimName;
+        row.appendChild(victimNameCell);
+
+        const convictNameCell = document.createElement("td");
+        convictNameCell.textContent = data.convictName;
+        row.appendChild(convictNameCell);
+
+        const convictGenderCell = document.createElement("td");
+        convictGenderCell.textContent = data.convictGender;
+        row.appendChild(convictGenderCell);
+
+        const convictAgeCell = document.createElement("td");
+        convictAgeCell.textContent = data.convictAge;
+        row.appendChild(convictAgeCell);
+
+        const witnessNameCell = document.createElement("td");
+        witnessNameCell.textContent = data.witnessName;
+        row.appendChild(witnessNameCell);
+
+        const victimPhoneCell = document.createElement("td");
+        victimPhoneCell.textContent = data.victimPhone;
+        row.appendChild(victimPhoneCell);
+
+        const witnessPhoneCell = document.createElement("td");
+        witnessPhoneCell.textContent = data.witnessPhone;
+        row.appendChild(witnessPhoneCell);
+
+        const victimAddressCell = document.createElement("td");
+        victimAddressCell.textContent = data.victimAddress;
+        row.appendChild(victimAddressCell);
+
+        const victimAgeCell = document.createElement("td");
+        victimAgeCell.textContent = data.victimAge;
+        row.appendChild(victimAgeCell);
+
+        const crimeLocationCell = document.createElement("td");
+        crimeLocationCell.textContent = data.crimeLocation;
+        row.appendChild(crimeLocationCell);
+
+        const dateCell = document.createElement("td");
+        dateCell.textContent = data.date;
+        row.appendChild(dateCell);
+
+        const crimeYearCell = document.createElement("td");
+        crimeYearCell.textContent = data.crimeYear;
+        row.appendChild(crimeYearCell);
+
+        const crimeCategoryCell = document.createElement("td");
+        crimeCategoryCell.textContent = data.crimeCategory;
+        row.appendChild(crimeCategoryCell);
+
+        const jailTermCell = document.createElement("td");
+        jailTermCell.textContent = data.jailTerm;
+        row.appendChild(jailTermCell);
+
+        tbody.appendChild(row);
+      } 
+      
+      else {
+        const row = document.createElement("tr");
+        const messageCell = document.createElement("td");
+        messageCell.textContent = "Oopsss!! No data found :(";
+        row.appendChild(messageCell);
+        tbody.appendChild(row);
+      }
+
+      complaintTable.style.display = "table";
+    }
+
+function displaySearchResultMulti(data) {
+      const complaintTable = document.getElementById("complaint-tab1");
+      const tbody = complaintTable.querySelector("#complaint-tab1-body");
+      tbody.innerHTML = "";     
+    if (data.length > 0) 
+    {
+      for (const entry of data) 
+      {
+        const row = document.createElement("tr");
+
+        const idCell = document.createElement("td");
+        idCell.textContent = entry.id;
+        row.appendChild(idCell);
+
+        const victimNameCell = document.createElement("td");
+        victimNameCell.textContent = entry.victimName;
+        row.appendChild(victimNameCell);
+
+        const convictNameCell = document.createElement("td");
+        convictNameCell.textContent = entry.convictName;
+        row.appendChild(convictNameCell);
+
+        const convictGenderCell = document.createElement("td");
+        convictGenderCell.textContent = entry.convictGender;
+        row.appendChild(convictGenderCell);
+
+        const convictAgeCell = document.createElement("td");
+        convictAgeCell.textContent = entry.convictAge;
+        row.appendChild(convictAgeCell);
+
+        const witnessNameCell = document.createElement("td");
+        witnessNameCell.textContent = entry.witnessName;
+        row.appendChild(witnessNameCell);
+
+        const victimPhoneCell = document.createElement("td");
+        victimPhoneCell.textContent = entry.victimPhone;
+        row.appendChild(victimPhoneCell);
+
+        const witnessPhoneCell = document.createElement("td");
+        witnessPhoneCell.textContent = entry.witnessPhone;
+        row.appendChild(witnessPhoneCell);
+
+        const victimAddressCell = document.createElement("td");
+        victimAddressCell.textContent = entry.victimAddress;
+        row.appendChild(victimAddressCell);
+
+        const victimAgeCell = document.createElement("td");
+        victimAgeCell.textContent = entry.victimAge;
+        row.appendChild(victimAgeCell);
+
+        const crimeLocationCell = document.createElement("td");
+        crimeLocationCell.textContent = entry.crimeLocation;
+        row.appendChild(crimeLocationCell);
+
+        const dateCell = document.createElement("td");
+        dateCell.textContent = entry.date;
+        row.appendChild(dateCell);
+
+        const crimeYearCell = document.createElement("td");
+        crimeYearCell.textContent = entry.crimeYear;
+        row.appendChild(crimeYearCell);
+
+        const crimeCategoryCell = document.createElement("td");
+        crimeCategoryCell.textContent = entry.crimeCategory;
+        row.appendChild(crimeCategoryCell);
+
+        const jailTermCell = document.createElement("td");
+        jailTermCell.textContent = entry.jailTerm;
+        row.appendChild(jailTermCell);
+
+        tbody.appendChild(row);
+      }
+  } 
+  else if(data.length==0)
+  {
+    const row = document.createElement("tr");
+    const messageCell = document.createElement("td");
+    messageCell.textContent = "Oopsss!! No data found :(";
+    row.appendChild(messageCell);
+    tbody.appendChild(row);
+  }
+
+  complaintTable.style.display = "table";
+}
+
+    
+
+    </script>
+
+</body>
+</html>
