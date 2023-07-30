@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/pen.css' rel='stylesheet'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+<body>
+    <header>
+        <div class="column-fluid">
+            <div class="row">
+                <div class="col-md-9 border">
+                    <div class="logo border">
+                        <a href="index.html">
+                            <img src="logo1.jpg" alt="Logo">
+                        </a>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li> 
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li> 
+                                <a href="#about">About</a>
+                            </li>
+                            <li> 
+                                <a href="">Incharge</a>
+                            </li>
+                            <li> 
+                                <a href="">Headquaters</a>
+                            </li>
+                            <li> 
+                                <a href="login.html" target="_blank">Police</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <a href="form.html" class="btn-white mt-20px" onclick="showComplaintForm()">File a Complaint</a>
+                </div>
+                
+            </div>
+        </div>
+    </header>
+    <section class="banner">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Government alone will never be able to do it</h1>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="container-fluid text-center">
+            <div class="about-content">
+                <h1> About Us </h1>
+                <p>We are a website that provides a platform for users to file complaints and for officers to search for criminal records. We believe that everyone has the right to be heard and that everyone has the right to know about their criminal history.</p>
+            </div>
+            <div class="mission-content" >
+                <h1> Our Mission </h1>
+                <p>Our mission is to create a safer community by providing a way for people to report crimes and to access criminal records. We believe that by making it easier for people to report crimes, we can help to deter crime and to bring criminals to justice. We also believe that by making it easier for people to access criminal records, we can help to protect people from potential harm.</p>
+            </div>
+            <div class="values-content">
+                <h1> Our Values </h1>
+                <p>We believe in the following values:</p>
+                <ul>
+                    <li>Transparency: We believe that everyone has the right to know about their criminal history. We are committed to providing accurate and up-to-date criminal records.</li>
+                    <li>Privacy: We respect the privacy of our users. We will never share your personal information with anyone without your permission.</li>
+                    <li>Security: We are committed to the security of our users' data. We use the latest security technologies to protect your data from unauthorized access.</li>
+                </ul>
+                <p> We hope that you will use our website to file a complaint or to search for a criminal record. We believe that our website can help to make our community a safer place.</p>
+            </div>
+            
+        </div>
+    </section>
+    <section>
+        <div class="footer">
+            <div class="row-footer">
+                <div class="col-footer">
+                    <img src="logo1.jpg" class="footer-logo">
+                    <h5>All rights reserved. ©2023. </h5>
+                    <h5>Unauthorized use and reproduction</h5> 
+                    <h5>of the content on this website is prohibited.</h5>
+                </div>
+                <div class="col-footer">
+                    <h3><strong>Office</strong></h3>
+                    <h5>National Highway</h5>
+                    <h5>8, Mahipalpur</h5>
+                    <h5>New Delhi - 110037, India</h5>
+                    <h5 class="email-id">dct@ncrb.gov.in</h5>
+                    <h4><strong>+(011) 26735450</strong></h4>
+                </div>
+                <div class="col-footer">
+                    <h3><strong>Links</strong></h3>
+                        <li><a href="https://ncrb.gov.in/en/digital-india-awards-2016">Digital India Awards</a></li>
+                        <li><a href="https://ncrb.gov.in/en/Crime-in-India-2021">Crime in India 2021</a></li>
+                        <li><a href="https://ncrb.gov.in/sites/default/files/videos/Short_film_on_NCRB_eng.mp4">Short Films</a></li>
+                        <li><a href="https://cybercrime.gov.in/">Cyber Crime Reporting Portal</a></li>
+                </div>
+                <div class="col-footer">
+                    <h3><strong>Newsletter</strong></h3>
+                    <form id="footer-form">
+                        <i class="fa fa-envelope"></i>
+                        <input type="email" placeholder="Enter your Email ID" required>
+                        <button type="submit" id="newsletter-submit"><strong>Send</strong></button>                           
+                    </form>
+                    <div class="social-icons">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-youtube"></a>
+                        <a href="#" class="fa fa-instagram"></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- <section>
+        <div class="help">
+            <div class="container-fluid text center">
+
+            </div>
+        </div>
+    </section> -->
+
+    <script>
+
+        var header= document.getElementsByTagName("header");
+        window.onscroll= function() {scrollFunction()};
+        function scrollFunction()
+        {
+            if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200)
+            {
+                header[0].setAttribute("class","header-active");
+            }
+            else
+            {
+                header[0].removeAttribute("class");
+            }
+        }
+        
+
+    </script> 
+
+<!-- Add Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script src="temp.js"></script>
+
+
+</body>
+</html>
